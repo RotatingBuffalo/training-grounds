@@ -1,7 +1,7 @@
 import loganlines from "./loganlines.json"
 import config from "./botconfig.json"
 //importing the Client Interface from discord.js
-import {Client} from "discord.js"
+import {Client, Guild, TextChannel} from "discord.js"
 //creating a client, duh
 const client = new Client();
 
@@ -21,6 +21,11 @@ client.on('message', message => {
     if(message.content === config.prefix.concat('loganlines'))
     {
         message.channel.send(loganlines.lines[Math.floor(Math.random() * loganlines.lines.length)]);
+    }
+    //quotegiver
+    if(message.content === config.prefix.concat('quotation'))
+    {
+        //put things here idk
     }
 });
 
